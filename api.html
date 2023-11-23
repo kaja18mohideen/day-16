@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facts Pagination</title>
+  <style>
+    .fact-container {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="dog-facts" class="fact-container active">
+  <h2>Page 1: Dog Facts</h2>
+  <ul>
+    <li>Dogs are descendants of wolves and were domesticated around 20,000 to 40,000 years ago.</li>
+    <li>The Basenji dog is known as the "barkless dog" because it doesn't bark like other breeds.</li>
+    <li>A Greyhound is one of the fastest dog breeds and can reach speeds of up to 45 miles per hour.</li>
+  </ul>
+</div>
+
+<div id="cat-facts" class="fact-container">
+  <h2>Page 2: Cat Facts</h2>
+  <ul>
+    <li>Cats have five toes on their front paws but only four on their back paws.</li>
+    <li>The oldest evidence of domesticated cats dates back to ancient Egypt around 4,000 years ago.</li>
+    <li>Cats have a unique grooming pattern, and they spend about 30-50% of their day cleaning themselves.</li>
+  </ul>
+</div>
+
+<div id="zoo-animal-facts" class="fact-container">
+  <h2>Page 3: Zoo Animal Facts</h2>
+  <ul>
+    <li>The giraffe is the world's tallest mammal, with a neck that can reach up to 6 feet in length.</li>
+    <li>Elephants are highly intelligent animals and are known for their excellent memory.</li>
+    <li>The poison dart frog is one of the most poisonous animals on Earth.</li>
+  </ul>
+</div>
+
+<button onclick="changePage('dog-facts')">Dog Facts</button>
+<button onclick="changePage('cat-facts')">Cat Facts</button>
+<button onclick="changePage('zoo-animal-facts')">Zoo Animal Facts</button>
+
+<script>
+  function changePage(pageId) {
+    
+    var containers = document.querySelectorAll('.fact-container');
+    containers.forEach(function(container) {
+      container.classList.remove('active');
+    });
+
+    
+    var selectedContainer = document.getElementById(pageId);
+    selectedContainer.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
